@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Bahan. import LineClient
+from Bahan import LineClient
 from Bahan.LineApi import LineTracer
 from Bahan.LineThrift.ttypes import Message
 from Bahan.LineThrift.TalkService import Client
