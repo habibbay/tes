@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from LineAlpha import LineClient
-from LineAlpha.LineApi import LineTracer
-from LineAlpha.LineThrift.ttypes import Message
-from LineAlpha.LineThrift.TalkService import Client
+from Bahan import LineClient
+from Bahan.LineApi import LineTracer
+from Bahan.LineThrift.ttypes import Message
+from Bahan.LineThrift.TalkService import Client
 import time, datetime, random ,sys, re, string, os, json
 
 reload(sys)
