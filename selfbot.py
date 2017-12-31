@@ -9,7 +9,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 client = LineClient()
-client._qrLogin("line://au/q/")
+client._midLogin("u4843bca56f19fd29c1ad040f7fdd80dc")
 
 profile, setting, tracer = client.getProfile(), client.getSettings(), LineTracer(client)
 offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
@@ -43,7 +43,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 	
 def NOTIFIED_ADD_CONTACT(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param1).displayName + " Thanks udah ngeadd 😘 ")
+        sendMessage(op.param1, client.getContact(op.param1).displayName + " Thanks udah ngeadd ðŸ˜˜ ")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
@@ -66,7 +66,7 @@ tracer.addOpInterrupt(17,NOTIFIED_ACCEPT_GROUP_INVITATION)
 def NOTIFIED_KICKOUT_FROM_GROUP(op):
     try:
 	client.kickoutFromGroup(op.param1,[op.param2])
-	sendMessage(op.param1, client.getContact(op.param3).displayName + "Bye! Kamu di kick Hahaha 􀜁􀅔Har Har􏿿")
+	sendMessage(op.param1, client.getContact(op.param3).displayName + "Bye! Kamu di kick Hahaha ô€œô€…”Har Harô¿¿")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
@@ -76,7 +76,7 @@ tracer.addOpInterrupt(19,NOTIFIED_KICKOUT_FROM_GROUP)
 
 def NOTIFIED_LEAVE_GROUP(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + " Bye! Semoga bisa ketemu lagi ya 􀜁􀅔Har Har􏿿")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + " Bye! Semoga bisa ketemu lagi ya ô€œô€…”Har Harô¿¿")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_LEAVE_GROUP\n\n")
@@ -112,8 +112,8 @@ def NOTIFIED_READ_MESSAGE(op):
             if Name in wait['readMember'][op.param1]:
                 pass
             else:
-                wait['readMember'][op.param1] += "\nツ1�7" + Name
-                wait['ROM'][op.param1][op.param2] = "ツ1�7" + Name
+                wait['readMember'][op.param1] += "\nãƒ„1¤7" + Name
+                wait['ROM'][op.param1][op.param2] = "ãƒ„1¤7" + Name
         else:
             pass
     except:
@@ -237,7 +237,7 @@ def SEND_MESSAGE(op):
                     key = msg.text[5:]
                     client.kickoutFromGroup(msg.to, [key])
                     contact = client.getContact(key)
-                    sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
+                    sendMessage(msg.to, ""+contact.displayName+" maapin say ô€œô€…”Har Harô¿¿")
 		if "nk" in msg.text:
                     bamz0 = msg.text.replace("nk ","")
                     bamz1 = bamz0.lstrip()
@@ -292,7 +292,7 @@ def SEND_MESSAGE(op):
 				group.name = name
 				client.updateGroup(group)
 			except:
-			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
+			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke ô€œô€…”double thumbs upô¿¿ô€œô€…”Har Harô¿¿")
 		if "stealgc" in msg.text:
 		    group = client.getGroup(msg.to)
 		    sendMessage(msg.to,"Gambar Grup :\n=> http://dl.profile.line-cdn.net/" + group.pictureStatus)
@@ -361,7 +361,7 @@ def SEND_MESSAGE(op):
                     print "Cleaning Member....."
                     _name = msg.text.replace("Play","")
                     gs = client.getGroup(msg.to)
-                    sendMessage(msg.to,"c��Ӂ0�2�� b�0�2o�0�2t�0�2s�0�2 �0�8�0�3�0�9�0�6�0�7 �0�3�5�3 �5�3�0�5�0�2��0�2!!")
+                    sendMessage(msg.to,"c§å§Ó0Ó2§ñ b0Â2o0Â2t0Â2s0Â2 0Œ80°30­90±60¬7 035õ3 5ù30Ý50Ó2§ñ0Ó2!!")
 		    sendMessage(msg.to,"Grup dibersihkan...")
 		    sendMessage(msg.to,"Maafkan Kesalahan Orang Ini :v")
                     targets = []
@@ -437,7 +437,7 @@ def SEND_MESSAGE(op):
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
                 if msg.text == "set":
-                    sendMessage(msg.to, "Dasar sider \nKetik 「sider〄1�7 gua bakal ngasih tau siapa sidernya")
+                    sendMessage(msg.to, "Dasar sider \nKetik ã€Œsiderã€„1¤7 gua bakal ngasih tau siapa sidernya")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
@@ -460,7 +460,7 @@ def SEND_MESSAGE(op):
 
                         sendMessage(msg.to, "Nih sider nya %s\nTadaaaa.....\n\nsider doang kerjaannya\n%sGileee benerrr..\n\nSider dilihat pada tanggal dan waktu:\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        sendMessage(msg.to, "Belom di set we 􀜁􀅔Har Har􏿿\nKetik 「set〄1�7 buat lihat siapa sider lucknut :v")
+                        sendMessage(msg.to, "Belom di set we ô€œô€…”Har Harô¿¿\nKetik ã€Œsetã€„1¤7 buat lihat siapa sider lucknut :v")
                 else:
                     pass
         else:
